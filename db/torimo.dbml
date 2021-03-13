@@ -11,6 +11,7 @@ Table user_trips {
 Table trips {
   id int [pk]
   title string 
+  main_place string
   budget inttit
 }
 

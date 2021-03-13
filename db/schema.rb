@@ -47,6 +47,7 @@ ActiveRecord::Schema.define(version: 2021_03_13_080756) do
   create_table "trips", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.string "title"
+    t.string "main_place"
     t.integer "budget"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
