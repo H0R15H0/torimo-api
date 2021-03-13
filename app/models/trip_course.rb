@@ -8,9 +8,6 @@ class TripCourse < ApplicationRecord
                                    dependent:   :destroy
   has_one :back, through: :active_relationships, source: :from
   has_one :next, through: :passive_relationships, source: :to
-
-  def transportation_to_next
-    return TripCourseTransportation.find_by(from_id: self.id).transportation
-  end
+  has_one :transportation_to_next, through: :passive_relationships, source: :transportation
 
 end
