@@ -12,7 +12,7 @@ Table trips {
   id int [pk]
   title string 
   main_place string
-  budget inttit
+  budget int
 }
 
 Table trip_courses {
