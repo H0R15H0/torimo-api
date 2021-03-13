@@ -1,0 +1,35 @@
+Table users {
+  id int [pk]
+  token string
+}
+
+Table user_trips {
+  user_id int [ref:> users.id]
+  trip_id int [ref:> trips.id]
+}
+
+Table trips {
+  id int [pk]
+  title string 
+  budget inttit
+}
+
+Table trip_courses {
+  id int [pk]
+  trip_id int [ref:> trips.id]
+  palce string [note: "行った場所"]
+  arrival_time datetime [note: "時刻"]
+  day_of_trip int [note: "何日目か"]
+  index_in_course int [note: "全体で何番目か？"]
+}
+
+Table trip_course_transportation {
+  from int [ref:> trip_courses.id]
+  to int [ref:> trip_courses.id]
+  transportation_id int [ref:> transportations.id]
+}
+
+Table transportations {
+  id int [pk]
+  name string
+}
