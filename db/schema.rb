@@ -22,14 +22,14 @@ ActiveRecord::Schema.define(version: 2021_03_13_080756) do
   end
 
   create_table "trip_course_transportations", force: :cascade do |t|
-    t.integer "from"
-    t.integer "to"
+    t.integer "from_id"
+    t.integer "to_id"
     t.bigint "transportation_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["from", "to"], name: "index_trip_course_transportations_on_from_and_to", unique: true
-    t.index ["from"], name: "index_trip_course_transportations_on_from"
-    t.index ["to"], name: "index_trip_course_transportations_on_to"
+    t.index ["from_id", "to_id"], name: "index_trip_course_transportations_on_from_id_and_to_id", unique: true
+    t.index ["from_id"], name: "index_trip_course_transportations_on_from_id"
+    t.index ["to_id"], name: "index_trip_course_transportations_on_to_id"
     t.index ["transportation_id"], name: "index_trip_course_transportations_on_transportation_id"
   end
 
