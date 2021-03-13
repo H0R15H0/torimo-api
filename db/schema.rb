@@ -45,10 +45,12 @@ ActiveRecord::Schema.define(version: 2021_03_13_080756) do
   end
 
   create_table "trips", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.string "title"
     t.integer "budget"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_trips_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,4 +61,5 @@ ActiveRecord::Schema.define(version: 2021_03_13_080756) do
 
   add_foreign_key "trip_course_transportations", "transportations"
   add_foreign_key "trip_courses", "trips"
+  add_foreign_key "trips", "users"
 end
