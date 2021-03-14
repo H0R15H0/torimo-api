@@ -5,6 +5,7 @@ Rails.application.routes.draw do
       # define api endpoints
       get 'trips' => 'trips#index'
       get 'trips/:id' => 'trips#show'
+      get 'search_trips' => 'trips#search'
     end
   end
 end
